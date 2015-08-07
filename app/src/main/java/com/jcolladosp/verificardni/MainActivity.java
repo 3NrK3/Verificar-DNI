@@ -74,10 +74,18 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
         return false;
     }
 
+    final View.OnClickListener errorSnack = new View.OnClickListener() {
+        public void onClick(View v) {
+            campo.setText("");
+        }
+    };
+
     public void mostrarError(){
         Snackbar
                 .make(letrag, "Longitud del DNI incorrecta", Snackbar.LENGTH_LONG)
+                .setAction("Limpiar campo de texto",errorSnack)
                 .show();
+
         letrag.setText("");
     }
     private void setListeners() {
@@ -89,13 +97,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
     public void onClick(View v) {
         if (v.getId() == R.id.btGenerar) {
             hideKeyboard();
-            if (campo.getText().toString().equals("") || campo.getText().toString().length()>=9){mostrarError();}
+            if (campo.getText().toString().equals("")){mostrarError();}
             else{
 
                 int dni = Integer.parseInt(campo.getText().toString());
                 if (comprobarDNI(dni)){
             calculaLetra(dni);
-            letrag.setText("La letra del DNI " + dni +" es " + letra);}}
+            letrag.setText("La letra del DNI " + dni +" es: " + letra);}}
         }
     }
 }
