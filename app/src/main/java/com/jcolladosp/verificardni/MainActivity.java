@@ -8,6 +8,7 @@ import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{
@@ -24,8 +25,8 @@ public class MainActivity extends BaseActivity implements View.OnClickListener{
 
         setListeners();
         letrag = (TextView) findViewById(R.id.txLetra);
-
         campo = (EditText) findViewById(R.id.editText);
+        campo.max
     }
 
     @Override
