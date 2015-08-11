@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class AcercaFragment extends Fragment {
+public class AcercaFragment extends BaseFragment {
 
 
     public static AcercaFragment newInstance() {

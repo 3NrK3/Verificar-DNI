@@ -17,7 +17,7 @@
         android:maxLength="8"
         android:numeric="integer"
         android:layout_marginTop="27dp"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/txTitulo"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Generar la letra del DNI"
-        android:id="@+id/textView"
+        android:id="@+id/txTitulo"
         android:layout_marginTop="69dp"
         android:gravity="center"
         android:layout_alignParentTop="true"
@@ -55,21 +55,27 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:id="@+id/txVeri"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
     <Switch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Verificador de DNI"
         android:id="@+id/switch1"
         android:checked="false"
-        android:layout_alignTop="@+id/txLetra"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/txLetra"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="25dp" />
+
+    <EditText
+        android:layout_width="30dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/edLetra"
+        android:layout_alignTop="@+id/editText"
+        android:layout_toRightOf="@+id/editText"
+        android:layout_toEndOf="@+id/editText"
+        android:inputType="textCapCharacters"
+        android:hint="Z"
+        android:gravity="center"
+        android:maxLength="1"
+        android:visibility="invisible" />
 
 </RelativeLayout>
