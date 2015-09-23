@@ -1,6 +1,8 @@
 package com.jcolladosp.verificardni;
 
-import android.support.v7.app.AppCompatActivity;
+
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -9,7 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.NumberPicker;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -23,12 +24,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public EditText eletra;
     public boolean modoVeri = false;
     private Switch mySwitch;
+    public Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        context = this;
         setListeners();
         letrag = (TextView) findViewById(R.id.txLetra);
         titulo = (TextView) findViewById(R.id.txTitulo);
@@ -73,10 +75,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             int id = item.getItemId();
 
             if (id == R.id.action_settings) {
-                return true;
-            }
 
-            return super.onOptionsItemSelected(item);
+                Intent a = new Intent(this, AcercaActivity.class);
+                startActivity(a);
+            return true;
+
+        }
+            return true;
         }
 
     public void calculaLetra(int dni) {
